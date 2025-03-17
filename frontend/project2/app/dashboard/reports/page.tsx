@@ -23,7 +23,7 @@ import {
 import { useToast } from "@/components/ui/use-toast";
 
 // API URL
-const API_URL = "http://52.78.27.224/api/v1";
+const API_URL = "https://52.78.27.224/api/v1";
 
 // 신고 유형 정의
 type ReportType = "SPAM" | "INAPPROPRIATE" | "ABUSE" | "FALSE_INFO";

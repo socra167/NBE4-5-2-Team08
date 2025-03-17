@@ -40,9 +40,12 @@ export default function AdminStatsPage() {
 
       // 통계 데이터 로드
       try {
-        const response = await fetch("http://52.78.27.224/api/v1/admin/stats", {
-          credentials: "include",
-        });
+        const response = await fetch(
+          "https://52.78.27.224/api/v1/admin/stats",
+          {
+            credentials: "include",
+          }
+        );
 
         if (!response.ok) {
           throw new Error("통계 데이터를 불러오는데 실패했습니다.");

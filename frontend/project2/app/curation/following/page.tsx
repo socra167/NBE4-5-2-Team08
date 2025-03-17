@@ -38,7 +38,7 @@ interface ApiResponse {
 }
 
 // API URL 상수
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://52.78.27.224";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://52.78.27.224";
 const PAGE_SIZE = 20;
 
 // 디바운스 함수 구현

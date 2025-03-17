@@ -23,7 +23,7 @@ export default function RightSidebar() {
       try {
         setIsLoading(true);
         const response = await fetch(
-          "http://52.78.27.224/api/v1/curation/trending-curation",
+          "https://52.78.27.224/api/v1/curation/trending-curation",
           {
             cache: "no-store",
           }

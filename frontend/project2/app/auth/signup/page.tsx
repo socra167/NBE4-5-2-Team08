@@ -48,7 +48,7 @@ export default function SignupPage() {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://52.78.27.224/api/v1/members/join", {
+      const response = await fetch("https://52.78.27.224/api/v1/members/join", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
