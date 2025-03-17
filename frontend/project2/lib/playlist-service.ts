@@ -6,7 +6,7 @@ export async function createPlaylist(data: {
   description?: string;
   isPublic?: boolean;
 }): Promise<Playlist> {
-  const response = await fetch("https://52.78.27.224.nip.io/api/v1/playlists", {
+  const response = await fetch("https://linkurator.store/api/v1/playlists", {
     cache: "no-store",
     method: "POST",
     headers: {
@@ -27,7 +27,7 @@ export async function getPlaylistById(id: number): Promise<Playlist> {
   const isLoggedIn = sessionStorage.getItem("isLoggedIn") === "true";
 
   const response = await fetch(
-    `https://52.78.27.224.nip.io/api/v1/playlists/${id}`,
+    `https://linkurator.store/api/v1/playlists/${id}`,
     {
       cache: "no-store",
       ...(isLoggedIn ? { credentials: "include" } : {}),
@@ -51,7 +51,7 @@ export async function updatePlaylist(
   }
 ): Promise<Playlist> {
   const response = await fetch(
-    `https://52.78.27.224.nip.io/api/v1/playlists/${id}`,
+    `https://linkurator.store/api/v1/playlists/${id}`,
     {
       method: "PATCH",
       headers: {
@@ -80,7 +80,7 @@ export async function addItemToPlaylist(
   }
 ): Promise<Playlist> {
   const response = await fetch(
-    `https://52.78.27.224.nip.io/api/v1/playlists/${playlistId}/items/link`,
+    `https://linkurator.store/api/v1/playlists/${playlistId}/items/link`,
     {
       method: "POST",
       headers: {
@@ -115,7 +115,7 @@ export async function deletePlaylistItem(
 
   // 쿼리 파라미터로 하위 아이템 삭제 여부 전달
   // URL 구성 방식 변경 및 로깅 추가
-  const url = `https://52.78.27.224.nip.io/api/v1/playlists/${playlistId}/items/${itemId}?deleteChildren=${deleteChildren}`;
+  const url = `https://linkurator.store/api/v1/playlists/${playlistId}/items/${itemId}?deleteChildren=${deleteChildren}`;
   console.log(
     `아이템 삭제 요청 URL: ${url}, deleteChildren: ${deleteChildren}`
   );
@@ -164,7 +164,7 @@ export async function updatePlaylistItem(
   }
 
   const response = await fetch(
-    `https://52.78.27.224.nip.io/api/v1/playlists/${playlistId}/items/${itemId}`,
+    `https://linkurator.store/api/v1/playlists/${playlistId}/items/${itemId}`,
     {
       method: "PATCH",
       headers: {
@@ -192,7 +192,7 @@ export async function updatePlaylistItemOrder(
 
   try {
     const response = await fetch(
-      `https://52.78.27.224.nip.io/api/v1/playlists/${playlistId}/items/order`,
+      `https://linkurator.store/api/v1/playlists/${playlistId}/items/order`,
       {
         method: "PATCH",
         headers: {
@@ -249,7 +249,7 @@ export async function recommendPlaylist(
 ): Promise<Playlist[]> {
   try {
     const response = await fetch(
-      `https://52.78.27.224.nip.io/api/v1/playlists/${playlistId}/recommendation?sortType=${sortType}`,
+      `https://linkurator.store/api/v1/playlists/${playlistId}/recommendation?sortType=${sortType}`,
       {
         credentials: "include",
       }
@@ -270,12 +270,9 @@ export async function recommendPlaylist(
 // 모든 플레이리스트 가져오기
 export async function getAllPlaylists(): Promise<Playlist[]> {
   try {
-    const response = await fetch(
-      "https://52.78.27.224.nip.io/api/v1/playlists",
-      {
-        credentials: "include",
-      }
-    );
+    const response = await fetch("https://linkurator.store/api/v1/playlists", {
+      credentials: "include",
+    });
 
     if (!response.ok) {
       throw new Error("플레이리스트 목록 조회에 실패했습니다.");
@@ -293,7 +290,7 @@ export async function getAllPlaylists(): Promise<Playlist[]> {
 export async function getLikedPlaylists(): Promise<Playlist[]> {
   try {
     const response = await fetch(
-      "https://52.78.27.224.nip.io/api/v1/playlists/liked",
+      "https://linkurator.store/api/v1/playlists/liked",
       {
         credentials: "include",
       }
@@ -319,7 +316,7 @@ export async function getPlaylistLikeCount(
     // 캐시 방지를 위한 타임스탬프 추가
     const timestamp = new Date().getTime();
     const response = await fetch(
-      `https://52.78.27.224.nip.io/api/v1/playlists/${playlistId}/like/count?_t=${timestamp}`,
+      `https://linkurator.store/api/v1/playlists/${playlistId}/like/count?_t=${timestamp}`,
       {
         cache: "no-store",
         credentials: "include", // credentials 추가 - 중요!
@@ -361,7 +358,7 @@ export async function getPlaylistLikeStatus(
     // 캐시 방지를 위한 타임스탬프 추가
     const timestamp = new Date().getTime();
     const response = await fetch(
-      `https://52.78.27.224.nip.io/api/v1/playlists/${playlistId}/like/status?_t=${timestamp}`,
+      `https://linkurator.store/api/v1/playlists/${playlistId}/like/status?_t=${timestamp}`,
       {
         credentials: "include",
         cache: "no-store",
@@ -400,7 +397,7 @@ export async function getPlaylistLikeStatus(
 export async function likePlaylist(playlistId: number): Promise<void> {
   try {
     const response = await fetch(
-      `https://52.78.27.224.nip.io/api/v1/playlists/${playlistId}/like`,
+      `https://linkurator.store/api/v1/playlists/${playlistId}/like`,
       {
         method: "POST",
         credentials: "include",
@@ -433,7 +430,7 @@ export async function likePlaylist(playlistId: number): Promise<void> {
 export async function unlikePlaylist(playlistId: number): Promise<void> {
   try {
     const response = await fetch(
-      `https://52.78.27.224.nip.io/api/v1/playlists/${playlistId}/like`,
+      `https://linkurator.store/api/v1/playlists/${playlistId}/like`,
       {
         method: "DELETE",
         credentials: "include",

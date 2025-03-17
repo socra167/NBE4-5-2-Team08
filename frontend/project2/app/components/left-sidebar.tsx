@@ -14,7 +14,7 @@ export default function LeftSidebar() {
       try {
         setIsLoading(true);
         const response = await fetch(
-          "https://52.78.27.224.nip.io/api/v1/curation/trending-tag",
+          "https://linkurator.store/api/v1/curation/trending-tag",
           {
             cache: "no-store",
           }

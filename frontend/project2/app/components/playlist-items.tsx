@@ -430,7 +430,7 @@ export default function PlaylistItems({
     try {
       // 캐시 헤더를 제거하고 기본 요청으로 단순화
       const response = await fetch(
-        `https://52.78.27.224.nip.io/api/v1/playlists/${playlistId}`,
+        `https://linkurator.store/api/v1/playlists/${playlistId}`,
         {
           credentials: "include",
           cache: "no-store",

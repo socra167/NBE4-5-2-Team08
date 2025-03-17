@@ -100,17 +100,14 @@ export default function CreateCurationPage() {
       };
 
       // API 호출
-      const response = await fetch(
-        "https://52.78.27.224.nip.io/api/v1/curation",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: "include",
-          body: JSON.stringify(requestData),
-        }
-      );
+      const response = await fetch("https://linkurator.store/api/v1/curation", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify(requestData),
+      });
 
       if (!response.ok) {
         throw new Error("큐레이션 생성에 실패했습니다.");

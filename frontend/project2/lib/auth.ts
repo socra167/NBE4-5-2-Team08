@@ -7,12 +7,9 @@ export async function checkLoginStatus(): Promise<boolean> {
       return true;
     }
 
-    const response = await fetch(
-      "https://52.78.27.224.nip.io/api/v1/members/me",
-      {
-        credentials: "include",
-      }
-    );
+    const response = await fetch("https://linkurator.store/api/v1/members/me", {
+      credentials: "include",
+    });
 
     if (response.ok) {
       sessionStorage.setItem("isLoggedIn", "true");

@@ -32,7 +32,7 @@ export default function LogoutPage() {
         window.dispatchEvent(new Event("logout"));
 
         const response = await fetch(
-          "https://52.78.27.224.nip.io/api/v1/members/logout",
+          "https://linkurator.store/api/v1/members/logout",
           {
             method: "POST",
             credentials: "include", // 쿠키를 포함하여 요청

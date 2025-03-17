@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import { useRouter, usePathname } from "next/navigation";
 
-const API_URL = "https://52.78.27.224.nip.io";
+const API_URL = "https://linkurator.store";
 
 export default function Header() {
   const router = useRouter();
@@ -51,7 +51,7 @@ export default function Header() {
     const checkLoginStatus = async () => {
       try {
         const response = await fetch(
-          "https://52.78.27.224.nip.io/api/v1/members/me",
+          "https://linkurator.store/api/v1/members/me",
           {
             credentials: "include",
           }
@@ -89,7 +89,7 @@ export default function Header() {
     setIsLoading(true);
     try {
       const response = await fetch(
-        "https://52.78.27.224.nip.io/api/v1/members/me",
+        "https://linkurator.store/api/v1/members/me",
         {
           credentials: "include",
         }
@@ -245,7 +245,7 @@ export default function Header() {
     console.log("로그아웃 요청 시작...");
     try {
       const response = await fetch(
-        "https://52.78.27.224.nip.io/api/v1/members/logout",
+        "https://linkurator.store/api/v1/members/logout",
         {
           method: "POST",
           credentials: "include",

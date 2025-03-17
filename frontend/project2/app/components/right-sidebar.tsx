@@ -23,7 +23,7 @@ export default function RightSidebar() {
       try {
         setIsLoading(true);
         const response = await fetch(
-          "https://52.78.27.224.nip.io/api/v1/curation/trending-curation",
+          "https://linkurator.store/api/v1/curation/trending-curation",
           {
             cache: "no-store",
           }

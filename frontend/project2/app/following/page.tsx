@@ -25,7 +25,7 @@ export default function FollowingPage() {
     try {
       setLoading(true);
       const response = await fetch(
-        "https://52.78.27.224.nip.io/api/v1/members/following",
+        "https://linkurator.store/api/v1/members/following",
         {
           credentials: "include",
         }
@@ -63,7 +63,7 @@ export default function FollowingPage() {
   const handleUnfollow = async (username: string) => {
     try {
       const response = await fetch(
-        `https://52.78.27.224.nip.io/api/v1/members/${username}/unfollow`,
+        `https://linkurator.store/api/v1/members/${username}/unfollow`,
         {
           method: "POST",
           credentials: "include",
@@ -91,7 +91,7 @@ export default function FollowingPage() {
   const handleFollow = async (username: string) => {
     try {
       const response = await fetch(
-        `https://52.78.27.224.nip.io/api/v1/members/${username}/follow`,
+        `https://linkurator.store/api/v1/members/${username}/follow`,
         {
           method: "POST",
           credentials: "include",
@@ -137,7 +137,7 @@ export default function FollowingPage() {
     const checkLoginStatus = async () => {
       try {
         const response = await fetch(
-          "https://52.78.27.224.nip.io/api/v1/members/me",
+          "https://linkurator.store/api/v1/members/me",
           {
             credentials: "include",
           }

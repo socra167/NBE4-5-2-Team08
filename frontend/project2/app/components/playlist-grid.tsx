@@ -39,18 +39,15 @@ export default function PlaylistGrid() {
     async function fetchPlaylists() {
       try {
         setIsLoading(true);
-        const res = await fetch(
-          "https://52.78.27.224.nip.io/api/v1/playlists",
-          {
-            cache: "no-store",
-            credentials: "include",
-            headers: {
-              "Cache-Control": "no-cache, no-store, must-revalidate",
-              Pragma: "no-cache",
-              Expires: "0",
-            },
-          }
-        );
+        const res = await fetch("https://linkurator.store/api/v1/playlists", {
+          cache: "no-store",
+          credentials: "include",
+          headers: {
+            "Cache-Control": "no-cache, no-store, must-revalidate",
+            Pragma: "no-cache",
+            Expires: "0",
+          },
+        });
         if (!res.ok) {
           throw new Error("플레이리스트 데이터를 불러오지 못했습니다.");
         }
@@ -68,7 +65,7 @@ export default function PlaylistGrid() {
   // handleDelete 함수를 수정하여 삭제 성공 후 플레이리스트 목록 페이지로 리다이렉트합니다
   const handleDelete = async (playlistId: number) => {
     const res = await fetch(
-      `https://52.78.27.224.nip.io/api/v1/playlists/${playlistId}`,
+      `https://linkurator.store/api/v1/playlists/${playlistId}`,
       {
         method: "DELETE",
         credentials: "include",

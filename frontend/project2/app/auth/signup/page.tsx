@@ -49,7 +49,7 @@ export default function SignupPage() {
 
     try {
       const response = await fetch(
-        "https://52.78.27.224.nip.io/api/v1/members/join",
+        "https://linkurator.store/api/v1/members/join",
         {
           method: "POST",
           headers: {
