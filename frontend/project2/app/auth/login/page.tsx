@@ -37,9 +37,12 @@ export default function LoginPage() {
 
     const checkLoginStatus = async () => {
       try {
-        const response = await fetch("https://52.78.27.224/api/v1/members/me", {
-          credentials: "include",
-        });
+        const response = await fetch(
+          "https://52.78.27.224.nip.io/api/v1/members/me",
+          {
+            credentials: "include",
+          }
+        );
 
         if (response.ok) {
           // 이미 로그인된 상태면 홈으로 이동
@@ -66,7 +69,7 @@ export default function LoginPage() {
     try {
       // 로그인 요청
       const response = await fetch(
-        "https://52.78.27.224/api/v1/members/login",
+        "https://52.78.27.224.nip.io/api/v1/members/login",
         {
           method: "POST",
           headers: {
@@ -91,7 +94,7 @@ export default function LoginPage() {
         try {
           // 사용자 정보 가져오기
           const userResponse = await fetch(
-            "https://52.78.27.224/api/v1/members/me",
+            "https://52.78.27.224.nip.io/api/v1/members/me",
             {
               credentials: "include",
             }

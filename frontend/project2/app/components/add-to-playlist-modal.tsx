@@ -54,7 +54,7 @@ async function addCurationToPlaylist(
 
   // 1. 큐레이션 헤더 추가 (그룹 헤더로 사용)
   const headerResponse = await fetch(
-    `https://52.78.27.224/api/v1/playlists/${playlistId}/items/link`,
+    `https://52.78.27.224.nip.io/api/v1/playlists/${playlistId}/items/link`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -85,7 +85,7 @@ async function addCurationToPlaylist(
     let linkData: LinkMetaData = {};
     try {
       const metaResponse = await fetch(
-        `https://52.78.27.224/api/v1/link/preview`,
+        `https://52.78.27.224.nip.io/api/v1/link/preview`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -110,7 +110,7 @@ async function addCurationToPlaylist(
     }
 
     const addLinkResponse = await fetch(
-      `https://52.78.27.224/api/v1/playlists/${playlistId}/items/link`,
+      `https://52.78.27.224.nip.io/api/v1/playlists/${playlistId}/items/link`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -161,9 +161,12 @@ export default function AddToPlaylistModal({
         setLoading(true);
         console.log("플레이리스트 목록 및 추가된 플레이리스트 확인 시작");
 
-        const res = await fetch("https://52.78.27.224/api/v1/playlists", {
-          credentials: "include",
-        });
+        const res = await fetch(
+          "https://52.78.27.224.nip.io/api/v1/playlists",
+          {
+            credentials: "include",
+          }
+        );
 
         if (!res.ok)
           throw new Error("플레이리스트 목록을 불러오지 못했습니다.");
@@ -192,7 +195,7 @@ export default function AddToPlaylistModal({
 
       // 큐레이션이 이미 추가된 플레이리스트 목록 가져오기
       const response = await fetch(
-        `https://52.78.27.224/api/v1/curation/${curationId}/playlists`,
+        `https://52.78.27.224.nip.io/api/v1/curation/${curationId}/playlists`,
         {
           credentials: "include",
         }
@@ -233,7 +236,7 @@ export default function AddToPlaylistModal({
 
       // 1. 큐레이션 데이터를 가져옵니다.
       const curationResponse = await fetch(
-        `https://52.78.27.224/api/v1/curation/${curationId}`,
+        `https://52.78.27.224.nip.io/api/v1/curation/${curationId}`,
         {
           credentials: "include",
         }
@@ -286,23 +289,26 @@ export default function AddToPlaylistModal({
       setIsSubmitting(true);
 
       // 1. 새 플레이리스트 생성
-      const createRes = await fetch("https://52.78.27.224/api/v1/playlists", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify({
-          title: newPlaylistTitle,
-          description: newPlaylistDescription,
-          isPublic: true,
-        }),
-      });
+      const createRes = await fetch(
+        "https://52.78.27.224.nip.io/api/v1/playlists",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify({
+            title: newPlaylistTitle,
+            description: newPlaylistDescription,
+            isPublic: true,
+          }),
+        }
+      );
       if (!createRes.ok) throw new Error("플레이리스트 생성에 실패했습니다.");
       const newPlaylist = await createRes.json();
       const newPlaylistId = newPlaylist.data.id;
 
       // 2. 큐레이션 데이터를 가져옵니다.
       const curationResponse = await fetch(
-        `https://52.78.27.224/api/v1/curation/${curationId}`,
+        `https://52.78.27.224.nip.io/api/v1/curation/${curationId}`,
         {
           credentials: "include",
         }

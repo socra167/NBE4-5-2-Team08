@@ -41,7 +41,7 @@ export default function AdminStatsPage() {
       // 통계 데이터 로드
       try {
         const response = await fetch(
-          "https://52.78.27.224/api/v1/admin/stats",
+          "https://52.78.27.224.nip.io/api/v1/admin/stats",
           {
             credentials: "include",
           }

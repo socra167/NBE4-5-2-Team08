@@ -48,23 +48,27 @@ export default function SignupPage() {
     setIsLoading(true);
 
     try {
-      const response = await fetch("https://52.78.27.224/api/v1/members/join", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          memberId: formData.memberId,
-          username: formData.username,
-          password: formData.password,
-          role: formData.role,
-          profileImage:
-            formData.profileImage || "https://example.com/default-profile.jpg",
-          email: formData.email,
-          introduce: formData.introduce,
-        }),
-        credentials: "include",
-      });
+      const response = await fetch(
+        "https://52.78.27.224.nip.io/api/v1/members/join",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            memberId: formData.memberId,
+            username: formData.username,
+            password: formData.password,
+            role: formData.role,
+            profileImage:
+              formData.profileImage ||
+              "https://example.com/default-profile.jpg",
+            email: formData.email,
+            introduce: formData.introduce,
+          }),
+          credentials: "include",
+        }
+      );
 
       if (response.ok) {
         toast({

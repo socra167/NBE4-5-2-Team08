@@ -73,7 +73,9 @@ export default function CommentSection({ postId }: CommentSectionProps) {
     try {
       setLoading(true);
       setError(null);
-      const res = await fetch(`https://52.78.27.224/api/v1/curation/${id}`);
+      const res = await fetch(
+        `https://52.78.27.224.nip.io/api/v1/curation/${id}`
+      );
 
       if (!res.ok) {
         throw new Error("댓글 데이터를 불러오는 데 실패했습니다.");
@@ -152,7 +154,7 @@ export default function CommentSection({ postId }: CommentSectionProps) {
 
       // API 호출로 댓글 생성
       const response = await fetch(
-        `https://52.78.27.224/api/v1/curations/${postId}/comments`,
+        `https://52.78.27.224.nip.io/api/v1/curations/${postId}/comments`,
         {
           method: "POST",
           credentials: "include",
@@ -231,7 +233,7 @@ export default function CommentSection({ postId }: CommentSectionProps) {
 
       // API 호출로 댓글 수정
       const response = await fetch(
-        `https://52.78.27.224/api/v1/curations/${postId}/comments/${commentId}`,
+        `https://52.78.27.224.nip.io/api/v1/curations/${postId}/comments/${commentId}`,
         {
           method: "PUT",
           credentials: "include",
@@ -294,7 +296,7 @@ export default function CommentSection({ postId }: CommentSectionProps) {
 
       // API 호출로 댓글 삭제
       const response = await fetch(
-        `https://52.78.27.224/api/v1/curations/${postId}/comments/${commentId}`,
+        `https://52.78.27.224.nip.io/api/v1/curations/${postId}/comments/${commentId}`,
         {
           method: "DELETE",
           credentials: "include",
@@ -363,7 +365,7 @@ export default function CommentSection({ postId }: CommentSectionProps) {
 
       // API 호출로 답글 생성
       const response = await fetch(
-        `https://52.78.27.224/api/v1/curations/${postId}/comments/${commentId}/reply`,
+        `https://52.78.27.224.nip.io/api/v1/curations/${postId}/comments/${commentId}/reply`,
         {
           method: "POST",
           credentials: "include",
@@ -443,7 +445,7 @@ export default function CommentSection({ postId }: CommentSectionProps) {
 
       // API 호출로 답글 수정
       const response = await fetch(
-        `https://52.78.27.224/api/v1/curations/${postId}/comments/${commentId}/reply/${replyId}`,
+        `https://52.78.27.224.nip.io/api/v1/curations/${postId}/comments/${commentId}/reply/${replyId}`,
         {
           method: "PUT",
           credentials: "include",
@@ -509,7 +511,7 @@ export default function CommentSection({ postId }: CommentSectionProps) {
 
       // API 호출로 답글 삭제
       const response = await fetch(
-        `https://52.78.27.224/api/v1/curations/${postId}/comments/${commentId}/reply/${replyId}`,
+        `https://52.78.27.224.nip.io/api/v1/curations/${postId}/comments/${commentId}/reply/${replyId}`,
         {
           method: "DELETE",
           credentials: "include",

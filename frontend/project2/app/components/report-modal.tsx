@@ -52,7 +52,7 @@ const ReportModal: React.FC<ReportModalProps> = ({
 
     try {
       const response = await fetch(
-        `https://52.78.27.224/api/v1/curation/${curationId}/report`,
+        `https://52.78.27.224.nip.io/api/v1/curation/${curationId}/report`,
         {
           method: "POST",
           headers: {

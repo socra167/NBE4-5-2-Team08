@@ -24,7 +24,7 @@ import { useToast } from "@/components/ui/use-toast";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 // API URL
-const API_URL = "https://52.78.27.224/api/v1";
+const API_URL = "https://52.78.27.224.nip.io/api/v1";
 
 // 댓글 타입 정의
 interface Comment {
