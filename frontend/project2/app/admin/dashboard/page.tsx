@@ -26,7 +26,7 @@ import { useToast } from "@/components/ui/use-toast";
 import { Badge } from "@/components/ui/badge";
 
 // 백엔드 API URL
-const API_URL = "https://linkurator.store/api/v1";
+const API_URL = "https://api.linkurator.store/api/v1";
 
 // Update the Member interface to match the new API response structure
 interface Member {

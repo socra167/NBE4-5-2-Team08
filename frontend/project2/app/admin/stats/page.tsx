@@ -41,7 +41,7 @@ export default function AdminStatsPage() {
       // 통계 데이터 로드
       try {
         const response = await fetch(
-          "https://linkurator.store/api/v1/admin/stats",
+          "https://api.linkurator.store/api/v1/admin/stats",
           {
             credentials: "include",
           }

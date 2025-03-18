@@ -24,7 +24,7 @@ import { useToast } from "@/components/ui/use-toast";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 // API URL
-const API_URL = "https://linkurator.store/api/v1";
+const API_URL = "https://api.linkurator.store/api/v1";
 
 // 댓글 타입 정의
 interface Comment {

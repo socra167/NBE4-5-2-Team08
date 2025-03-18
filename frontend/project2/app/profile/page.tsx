@@ -77,7 +77,7 @@ export default function ProfilePage() {
       setIsLoading(true);
       try {
         const response = await fetch(
-          "https://linkurator.store/api/v1/members/me",
+          "https://api.linkurator.store/api/v1/members/me",
           {
             credentials: "include",
             // 캐시 제어 추가
@@ -177,7 +177,7 @@ export default function ProfilePage() {
       formData.append("file", file);
 
       const response = await fetch(
-        "https://linkurator.store/api/v1/members/profile/images/upload",
+        "https://api.linkurator.store/api/v1/members/profile/images/upload",
         {
           method: "POST",
           body: formData,
@@ -199,7 +199,7 @@ export default function ProfilePage() {
 
         // 새로운 이미지 URL을 가져오기 위해 프로필 정보 다시 로드
         const userResponse = await fetch(
-          "https://linkurator.store/api/v1/members/me",
+          "https://api.linkurator.store/api/v1/members/me",
           {
             credentials: "include",
           }
@@ -249,7 +249,7 @@ export default function ProfilePage() {
 
       // memberId를 URL에 포함하여 API 호출
       const response = await fetch(
-        `https://linkurator.store/api/v1/members/${profile.memberId}`,
+        `https://api.linkurator.store/api/v1/members/${profile.memberId}`,
         {
           method: "PUT",
           headers: {
@@ -300,7 +300,7 @@ export default function ProfilePage() {
 
       // 계정 삭제 API 호출
       const response = await fetch(
-        `https://linkurator.store/api/v1/members/delete`,
+        `https://api.linkurator.store/api/v1/members/delete`,
         {
           method: "DELETE",
           credentials: "include",

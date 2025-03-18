@@ -74,7 +74,7 @@ export default function ExplorePlaylists() {
       try {
         setIsLoading(true);
         const res = await fetch(
-          "https://linkurator.store/api/v1/playlists/explore",
+          "https://api.linkurator.store/api/v1/playlists/explore",
           {
             // 로그인한 경우에만 credentials 포함
             ...(sessionStorage.getItem("isLoggedIn") === "true"
@@ -123,7 +123,7 @@ export default function ExplorePlaylists() {
 
       // 플레이리스트 복제 API 호출
       const response = await fetch(
-        `https://linkurator.store/api/v1/playlists/${playlistId}`,
+        `https://api.linkurator.store/api/v1/playlists/${playlistId}`,
         {
           method: "POST",
           credentials: "include",

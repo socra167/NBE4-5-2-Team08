@@ -52,7 +52,7 @@ const ReportModal: React.FC<ReportModalProps> = ({
 
     try {
       const response = await fetch(
-        `https://linkurator.store/api/v1/curation/${curationId}/report`,
+        `https://api.linkurator.store/api/v1/curation/${curationId}/report`,
         {
           method: "POST",
           headers: {

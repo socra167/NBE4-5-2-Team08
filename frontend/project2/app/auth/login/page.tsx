@@ -38,7 +38,7 @@ export default function LoginPage() {
     const checkLoginStatus = async () => {
       try {
         const response = await fetch(
-          "https://linkurator.store/api/v1/members/me",
+          "https://api.linkurator.store/api/v1/members/me",
           {
             credentials: "include",
           }
@@ -69,7 +69,7 @@ export default function LoginPage() {
     try {
       // 로그인 요청
       const response = await fetch(
-        "https://linkurator.store/api/v1/members/login",
+        "https://api.linkurator.store/api/v1/members/login",
         {
           method: "POST",
           headers: {
@@ -94,7 +94,7 @@ export default function LoginPage() {
         try {
           // 사용자 정보 가져오기
           const userResponse = await fetch(
-            "https://linkurator.store/api/v1/members/me",
+            "https://api.linkurator.store/api/v1/members/me",
             {
               credentials: "include",
             }

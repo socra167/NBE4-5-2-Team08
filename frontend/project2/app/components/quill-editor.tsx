@@ -83,7 +83,8 @@ const QuillEditor = forwardRef<QuillEditorRef, QuillEditorProps>(
 
                 // 서버에 이미지 업로드 요청
                 const apiUrl =
-                  process.env.NEXT_PUBLIC_API_URL || "https://linkurator.store";
+                  process.env.NEXT_PUBLIC_API_URL ||
+                  "https://api.linkurator.store";
                 const response = await fetch(`${apiUrl}/api/v1/images/upload`, {
                   method: "POST",
                   body: formData,

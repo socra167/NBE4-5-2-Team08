@@ -19,7 +19,7 @@ export default function EditPlaylistPage() {
       try {
         setIsLoading(true);
         const response = await fetch(
-          `https://linkurator.store/api/v1/playlists/${params.id}`,
+          `https://api.linkurator.store/api/v1/playlists/${params.id}`,
           {
             credentials: "include",
           }

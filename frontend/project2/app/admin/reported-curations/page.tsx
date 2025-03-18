@@ -27,7 +27,7 @@ import { useToast } from "@/components/ui/use-toast";
 import { Badge } from "@/components/ui/badge";
 
 // API URL
-const API_URL = "https://linkurator.store/api/v1";
+const API_URL = "https://api.linkurator.store/api/v1";
 
 // 신고 유형 정의
 type ReportType = "SPAM" | "INAPPROPRIATE" | "ABUSE" | "FALSE_INFO";

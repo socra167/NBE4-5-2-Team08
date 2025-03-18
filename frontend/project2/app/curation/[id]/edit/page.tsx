@@ -24,7 +24,8 @@ import AddToPlaylistModal from "@/app/components/add-to-playlist-modal";
 
 // API URL을 하드코딩된 값에서 환경 변수로 변경합니다.
 // 파일 상단에 다음 상수를 추가합니다:
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://linkurator.store";
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL || "https://api.linkurator.store";
 
 // Update the CurationData interface to ensure the click property is included
 interface CurationData {
